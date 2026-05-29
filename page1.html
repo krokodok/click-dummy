@@ -7,6 +7,8 @@
   <meta name="author" content="">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script>(()=>{"use strict";const e=e=>{"complete"===window.document.readyState?e():window.addEventListener("load",e,{once:!0})},t=e=>{const{height:t,width:n}=e.getBoundingClientRect();return{height:Math.ceil(t),width:Math.ceil(n)}},n=(e,t)=>e?t?e.querySelector(t):e.documentElement:null;const d=function(){let e=null;return()=>(e||(e=new ResizeObserver(e=>{e[0].target&&a(e[0].target)})),e)}();let i,o=!1;function r(e,t=0){const{targetElementSelector:a,bodyPadding:c,bodyMargin:s}=e.data,u=n(document,a);if(o||window.parent!==e.source)return;if(!u)return setTimeout(()=>r(e,t+1),(e=>e<=100?100:e<=120?1e3:1e4)(t));((e,t)=>{e&&(t.bodyPadding&&(e.body.style.padding=t.bodyPadding),t.bodyMargin&&(e.body.style.margin=t.bodyMargin))})(document,{bodyMargin:s,bodyPadding:c}),i=a;const w=d();w.disconnect(),w.observe(u),o=!0}!(typeof window<"u")||!(()=>{try{return window.self!==window.top}catch{return!0}})()||window.addEventListener("message",t=>"iframe-child-init"===t.data?.type?e(()=>r(t)):"iframe-get-child-dimensions"===t.data?.type?e(()=>function(e){const t=n(document,i);!o||window.parent!==e.source||!t||a(t)}(t)):void 0);const a=e=>{const{width:n,height:d}=t(e),i={type:"iframe-resized",width:n,height:d};window.parent.postMessage(i,"*")}})();</script>
 </head>
 
 
